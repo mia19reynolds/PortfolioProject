@@ -1,0 +1,16 @@
+<div class="home-container">
+    <h1>Welcome to Flix List</h1>
+
+    <h2>Trending Movies</h2>
+    <div class="movie-list">
+        <% trendingMovies.forEach(movie => { %>
+            <div class="movie">
+                <img src="<%= movie.poster %>" alt="<%= movie.title %>">
+                <h3><%= movie.title %></h3>
+                <p>Rating: <%= movie.vote_average %>/10</p>
+                <a href="/movies/details?movieId=<%= movie.id %>" class="view-details">View More Details</a>
+            </div>
+        <% }) %>
+    </
+    div>
+</div>

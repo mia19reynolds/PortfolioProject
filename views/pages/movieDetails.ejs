@@ -1,0 +1,67 @@
+<div class="movie-details-container">
+    <!-- Left Section: Movie Poster & Buttons -->
+    <div class="movie-details-left">
+        <h1><%= movie.title %></h1>
+        
+        <% if (movie.poster_path) { %>
+            <img src="https://image.tmdb.org/t/p/w500<%= movie.poster_path %>" alt="<%= movie.title %>">
+        <% } else { %>
+            <p>No Image Available</p>
+        <% } %>
+
+        <!-- Watchlist Actions -->
+        <% if (isInWatchlist) { %>
+            <form action="/watchlist/update" method="POST">
+                <input type="hidden" name="movieId" value="<%= movie.id %>">
+                <label>
+                    <input 
+                        type="checkbox" 
+                        name="watched" 
+                        value="TRUE" 
+                        onchange="this.form.submit()" 
+                        <% if (watched === 'TRUE') { %> checked <% } %> 
+                    />
+                    Mark as Watched
+                </label>
+            </form>
+
+            <form action="/watchlist/delete" method="post">
+                <input type="hidden" name="movieId" value="<%= movie.id %>">
+                <input type="hidden" name="title" value="<%= movie.title %>">
+                <input type="hidden" name="action" value="details">
+                <button type="submit">Remove from Watchlist</button>
+            </form>
+        <% } else { %>
+            <form action="/watchlist/add" method="post">
+                <input type="hidden" name="movieId" value="<%= movie.id %>">
+                <input type="hidden" name="title" value="<%= movie.title %>">
+                <input type="hidden" name="poster" value="<%= movie.poster %>">
+                <input type="hidden" name="action" value="details">
+                <button type="submit">Save to Watchlist</button>
+            </form>
+        <% } %>
+    </div>
+
+    <!-- Right Section: Movie Details & Comments -->
+    <div class="movie-details-right">
+        <p><strong>Release Date:</strong> <%= movie.release_date %></p>
+        <p><strong>Overview:</strong> <%= movie.overview %></p>
+
+        <!-- Comment Form -->
+        <form action="/comments/add" method="POST" class="comment-form">
+            <input type="hidden" name="imdb_id" value="<%= movie.id %>">
+            <textarea name="comment" placeholder="Write your comment here..." required maxlength="280"></textarea>
+            <button type="submit">Submit Comment</button>
+        </form>
+
+        <h2>Comments:</h2>
+        <div id="comments-list">
+            <% comments.forEach(comment => { %>
+                <div class="comment">
+                    <p><%= comment.comment %></p>
+                    <small>Posted on: <%= comment.created_at %></small>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+</div>

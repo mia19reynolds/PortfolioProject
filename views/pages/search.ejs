@@ -1,0 +1,25 @@
+<h1>Search for Movies</h1>
+<form action="/movies/search" method="GET" class="search-form">
+    <input type="text" name="query" placeholder="Search for a movie..." required>
+    <button type="submit">Search</button>
+</form>
+
+<% if (movies && movies.length > 0) { %>
+    <h2>Search Results:</h2>
+    <div class="movie-list">
+        <% movies.forEach(movie => { %>
+            <div class="movie">
+                <img src="<%= movie.poster %>" alt="<%= movie.title %> poster">
+                <h3><%= movie.title %></h3>
+                <p><%= movie.overview %></p>
+                <p>Release Date: <%= movie.release_date %></p>
+
+                <!-- View Details Button -->
+                <form action="/movies/details" method="get" style="display: inline;">
+                    <input type="hidden" name="movieId" value="<%= movie.id %>">
+                    <button type="submit" class="view-details-btn">View Details</button>
+                </form>
+            </div>
+        <% }) %>
+    </div>
+<% } %>

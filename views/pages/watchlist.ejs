@@ -1,0 +1,49 @@
+<body>
+    <div class="watchlist-container">
+        <h1>Your Watchlist</h1>
+
+        <!-- Search Form -->
+        <form action="/watchlist" method="GET" class="search-form">
+            <input type="text" name="query" placeholder="Search your watchlist..." value="<%= query %>">
+            <button type="submit">Search</button>
+        </form>
+
+        <table class="watchlist-table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Watched</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (items.length === 0) { %>
+                    <tr>
+                        <td colspan="3">No movies found in your watchlist.</td>
+                    </tr>
+                <% } else { %>
+                    <% items.forEach(movie => { %>
+                        <tr>
+                            <td><%= movie.title %></td>
+                            <td>
+                                <form action="/watchlist/update" method="POST">
+                                    <input type="hidden" name="movieId" value="<%= movie.imdb_id %>">
+                                    <input 
+                                        type="checkbox" 
+                                        name="watched" 
+                                        value="TRUE" 
+                                        onchange="this.form.submit()" 
+                                        <% if (movie.watched === 'TRUE') { %> checked <% } %> 
+                                    />
+                                </form>
+                            </td>
+                            <td>
+                                <a href="/movies/details?movieId=<%= movie.imdb_id %>" class="view-details-link">View Details</a>
+                            </td>
+                        </tr>
+                    <% }); %>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+</body>
