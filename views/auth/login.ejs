@@ -1,12 +1,11 @@
-
 <div class="login-container">
     <% if (error) { %>
         <p class="alert"><%= error %></p> <!-- Display the error message -->
     <% } %>
     <% if (messages.error) { %>
-        <div class="alert alert-danger">
-            <%= messages.error %>
-        </div>
+        <script type="text/javascript">
+            alert('<%= messages.error %>'); 
+        </script>
     <% } %>
     <h1>Login</h1>
     <form action="/users/loggedin" method="POST">

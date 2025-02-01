@@ -51,6 +51,8 @@ const db = mysql.createConnection ({
     port: 3307
 })
 
+app.use(flash());
+
 // Connect to the database
 db.connect((err) => {
     if (err) {
