@@ -8,6 +8,8 @@ const expressLayouts = require('express-ejs-layouts');
 const path = require('path');
 const flash = require('connect-flash');
 
+const basePath = '/usr/352';
+
 //Import mysql module
 var mysql = require('mysql2')
 
@@ -80,26 +82,26 @@ app.use((req, res, next) => {
 
 // Routes
 const mainRoutes = require("./routes/main")
-app.use('/', mainRoutes)
+app.use(basePath, mainRoutes)
 
 const userRoutes = require('./routes/users')
-app.use('/users', userRoutes)
+app.use(`${basePath}/users`, userRoutes)
 
 // Load the route handlers for /books
 const moviesRoutes = require('./routes/api/movies');
-app.use('/movies', moviesRoutes);
+app.use(`${basePath}/movies`, moviesRoutes);
 
 // Load the route handlers for /books
 const watchlistRoutes = require('./routes/api/watchlist');
-app.use('/watchlist', watchlistRoutes);
+app.use(`${basePath}/watchlist`, watchlistRoutes);
 
 // Load the route for api leaderboard
 const leaderboardRoutes = require('./routes/leaderboard'); 
-app.use('/leaderboard', leaderboardRoutes);
+app.use(`${basePath}/leaderboard`, leaderboardRoutes);
 
 // Import the comments route
 const commentsRoute = require('./routes/comments'); 
-app.use('/comments', commentsRoute);
+app.use(`${basePath}/comments`, commentsRoute);
 
 // Start the web app listening
 app.listen(port, () => console.log(`Node app listening on port ${port}!`))

@@ -7,7 +7,7 @@ router.get('/', isAuthenticated, (req, res) => {
     const userId = req.session.userId; 
     
     if (!userId) {
-        return res.redirect('/users/login');
+        return res.redirect('/usr/352/users/login');
     }
 
     let query = req.sanitize(req.query.query) || '';  
@@ -69,9 +69,9 @@ router.post('/add', isAuthenticated, (req, res) => {
         console.log(req.session)
 
         if (action === "details") {
-          return res.redirect(`/movies/details?movieId=${movieId}`);
+          return res.redirect(`/usr/352/movies/details?movieId=${movieId}`);
       }
-      res.redirect('/movies/search');
+      res.redirect('/usr/352/movies/search');
   });
 });
 
@@ -98,7 +98,7 @@ router.post('/delete', isAuthenticated, (req, res) => {
 
         
         if (action === "details") {
-            return res.redirect(`/movies/details?movieId=${movieId}`);
+            return res.redirect(`/usr/352/movies/details?movieId=${movieId}`);
         }
   });
 });
@@ -110,7 +110,7 @@ router.post('/update', isAuthenticated, (req, res) => {
     const watched  = req.sanitize(req.body.watched);
 
     if (!userId) {
-        return res.redirect('/users/login');
+        return res.redirect('/usr/352/users/login');
     }
 
     const newWatchedStatus = watched === 'TRUE' ? 'TRUE' : 'FALSE';
@@ -132,9 +132,9 @@ router.post('/update', isAuthenticated, (req, res) => {
 
         const referer = req.get('Referer'); // Get the previous page URL
         if (referer.includes('/movies/details')) {
-            return res.redirect(`/movies/details?movieId=${movieId}`);
+            return res.redirect(`//usr/352movies/details?movieId=${movieId}`);
         }
-        return res.redirect('/watchlist'); // Redirect to watchlist if no referer
+        return res.redirect('/usr/352/watchlist'); // Redirect to watchlist if no referer
     });
 });
 
