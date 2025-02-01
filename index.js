@@ -51,7 +51,14 @@ const db = mysql.createConnection ({
     port: 3307
 })
 
+// Flash middleware (must be after session)
 app.use(flash());
+
+// Middleware to make flash messages available in all views
+app.use((req, res, next) => {
+    res.locals.messages = req.flash();
+    next();
+});
 
 // Connect to the database
 db.connect((err) => {
