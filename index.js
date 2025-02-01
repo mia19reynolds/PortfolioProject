@@ -80,26 +80,26 @@ app.use((req, res, next) => {
 
 // Routes
 const mainRoutes = require("./routes/main")
-app.use('/usr/352/', mainRoutes)
+app.use('/', mainRoutes)
 
 const userRoutes = require('./routes/users')
-app.use('/usr/352/users', userRoutes)
+app.use('/users', userRoutes)
 
 // Load the route handlers for /books
 const moviesRoutes = require('./routes/api/movies');
-app.use('/usr/352/movies', moviesRoutes);
+app.use('/movies', moviesRoutes);
 
 // Load the route handlers for /books
 const watchlistRoutes = require('./routes/api/watchlist');
-app.use('/usr/352/watchlist', watchlistRoutes);
+app.use('/watchlist', watchlistRoutes);
 
 // Load the route for api leaderboard
 const leaderboardRoutes = require('./routes/leaderboard'); 
-app.use('/usr/352/leaderboard', leaderboardRoutes);
+app.use('/leaderboard', leaderboardRoutes);
 
 // Import the comments route
 const commentsRoute = require('./routes/comments'); 
-app.use('/usr/352/comments', commentsRoute);
+app.use('/comments', commentsRoute);
 
 // Start the web app listening
 app.listen(port, () => console.log(`Node app listening on port ${port}!`))
