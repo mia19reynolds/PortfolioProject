@@ -32,7 +32,7 @@ router.post('/add', isAuthenticated, (req, res) => {
     const comment = req.sanitize(req.body.comment);
 
     if (!userId) {
-        return res.redirect('/users/login');
+        return res.redirect('/usr/352/users/login');
     }
 
     if (!imdb_id || !comment) {
@@ -48,7 +48,7 @@ router.post('/add', isAuthenticated, (req, res) => {
             return res.status(500).json({ error: 'Failed to submit comment' });
         }
 
-        res.redirect(`/movies/details?movieId=${imdb_id}`);
+        res.redirect(`/usr/352/movies/details?movieId=${imdb_id}`);
     });
 });
 

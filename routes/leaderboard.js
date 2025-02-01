@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/leaderboard', (req, res) => {
+router.get('/', (req, res) => {
     const sqlQuery = `
         SELECT title, imdb_id, COUNT(*) AS watch_count 
         FROM watchlist 
@@ -16,7 +16,7 @@ router.get('/leaderboard', (req, res) => {
             console.error('Error fetching leaderboard:', err);
             return res.status(500).json({ error: 'Internal Server Error' });
         }
-        
+
         res.json({ leaderboard: results });
     });
 });

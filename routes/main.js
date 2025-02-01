@@ -39,7 +39,7 @@ router.get('/about', isAuthenticated, (req, res) => {
 
 router.get('/logout', (req,res) => {
     req.session.destroy(() => {
-        res.redirect('/users/login');
+        res.redirect('/usr/352/users/login');
     });
 });
 

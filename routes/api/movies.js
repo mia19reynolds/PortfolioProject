@@ -64,7 +64,7 @@ router.get('/details', [
     const movieId = req.sanitize(movie_Id); 
 
     if (!userId) {
-        return res.redirect('/users/login'); 
+        return res.redirect('/usr/352/users/login'); 
     }
 
     // Fetch movie details from TMDB API
