@@ -2,9 +2,9 @@
     <% if (error) { %>
         <p class="alert"><%= error %></p> <!-- Display the error message -->
     <% } %>
-    <% if (messages.error) { %>
+    <% if (messages.error && messages.error.length > 0) { %> 
         <script type="text/javascript">
-            alert('<%= error %>'); 
+            alert('<%= messages.error[0] %>');
         </script>
     <% } %>
     <h1>Login</h1>
