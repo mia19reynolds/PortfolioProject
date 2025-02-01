@@ -25,7 +25,7 @@
                 </label>
             </form>
 
-            <form action="/usr/352/watchlist/delete" method="post">
+            <form action="/watchlist/delete" method="post">
                 <input type="hidden" name="movieId" value="<%= movie.id %>">
                 <input type="hidden" name="title" value="<%= movie.title %>">
                 <input type="hidden" name="action" value="details">
@@ -48,7 +48,7 @@
         <p><strong>Overview:</strong> <%= movie.overview %></p>
 
         <!-- Comment Form -->
-        <form action="/usr/352/comments/add" method="POST" class="comment-form">
+        <form action="/comments/add" method="POST" class="comment-form">
             <input type="hidden" name="imdb_id" value="<%= movie.id %>">
             <textarea name="comment" placeholder="Write your comment here..." required maxlength="280"></textarea>
             <button type="submit">Submit Comment</button>
