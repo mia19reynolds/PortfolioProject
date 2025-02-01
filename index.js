@@ -51,9 +51,6 @@ const db = mysql.createConnection ({
     port: 3307
 })
 
-// Flash
-app.use(flash());
-
 // Connect to the database
 db.connect((err) => {
     if (err) {
@@ -75,11 +72,6 @@ app.use((req, res, next) => {
 
 // Set up flash messages
 app.use(flash());
-
-app.use((req, res, next) => {
-    res.locals.messages = req.flash();
-    next();
-});
 
 // Routes
 const mainRoutes = require("./routes/main")
