@@ -1,9 +1,6 @@
 <div class="login-container">
-    <% if (messages.error && messages.error.length > 0) { %> 
-        <script type="text/javascript">
-            alert('<%= messages.error[0] %>');  <!-- Show flash message -->
-        </script>
-        <p><%= messages.error[0] %></p>  <!-- Also display the message in text format for debugging -->
+    <% if (error) { %>
+        <p class="alert"><%= error %></p> <!-- Display the error message -->
     <% } %>
     <h1>Login</h1>
     <form action="/users/loggedin" method="POST">
