@@ -11,7 +11,7 @@
 
         <!-- Watchlist Actions -->
         <% if (isInWatchlist) { %>
-            <form action="/watchlist/update" method="POST">
+            <form action="/usr/352/watchlist/update" method="POST">
                 <input type="hidden" name="movieId" value="<%= movie.id %>">
                 <label>
                     <input 
@@ -25,14 +25,14 @@
                 </label>
             </form>
 
-            <form action="/watchlist/delete" method="post">
+            <form action="/usr/352/watchlist/delete" method="post">
                 <input type="hidden" name="movieId" value="<%= movie.id %>">
                 <input type="hidden" name="title" value="<%= movie.title %>">
                 <input type="hidden" name="action" value="details">
                 <button type="submit">Remove from Watchlist</button>
             </form>
         <% } else { %>
-            <form action="/watchlist/add" method="post">
+            <form action="usr/352/watchlist/add" method="post">
                 <input type="hidden" name="movieId" value="<%= movie.id %>">
                 <input type="hidden" name="title" value="<%= movie.title %>">
                 <input type="hidden" name="poster" value="<%= movie.poster %>">
