@@ -82,7 +82,7 @@ app.use((req, res, next) => {
 
 // Routes
 const mainRoutes = require("./routes/main")
-app.use(basePath, mainRoutes)
+app.use('/', mainRoutes)
 
 const userRoutes = require('./routes/users')
 app.use(`${basePath}/users`, userRoutes)
