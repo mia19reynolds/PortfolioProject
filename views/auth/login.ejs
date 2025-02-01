@@ -14,7 +14,8 @@
 
 <% if (flashMessage && flashMessage.length > 0) { %>
     <script>
-        alert('<%= flashMessage[0] %>');  <!-- Show flash message -->
+        // Ensure flashMessage is properly rendered as raw HTML
+        alert('<%= flashMessage[0] %>');  <!-- Display the flash message using a simple alert -->
     </script>
 <% } %>
 
