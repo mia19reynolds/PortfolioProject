@@ -126,7 +126,7 @@ router.post('/loggedin', function (req, res, next) {
                 // Save the watchlist in the session
                 req.session.watchlist = watchlist || [];
                 console.log(req.session)
-                res.redirect('/usr/352', {flashMessage: null}); 
+                res.redirect('/usr/352'); 
             });
         });
     });
