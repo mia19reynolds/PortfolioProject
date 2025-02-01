@@ -1,3 +1,9 @@
+<% if (flashMessage && flashMessage.length > 0) { %>
+    <script>
+        alert('<%= flashMessage[0] %>');  <!-- Display the flash message in a simple alert -->
+    </script>
+<% } %>
+
 <div class="login-container">
     <% if (error) { %>
         <p class="alert"><%= error %></p> <!-- Display the error message -->
@@ -11,11 +17,3 @@
     </form>
     <p>Don't have an account? <a href="/users/register">Register here</a></p>
 </div>
-
-<% if (flashMessage && flashMessage.length > 0) { %>
-    <script>
-        // Ensure flashMessage is properly rendered as raw HTML
-        alert('<%= flashMessage[0] %>');  <!-- Display the flash message using a simple alert -->
-    </script>
-<% } %>
-
