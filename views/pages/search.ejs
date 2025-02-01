@@ -1,5 +1,5 @@
 <h1>Search for Movies</h1>
-<form action="/usr/352/movies/search" method="GET" class="search-form">
+<form action="/movies/search" method="GET" class="search-form">
     <input type="text" name="query" placeholder="Search for a movie..." required>
     <button type="submit">Search</button>
 </form>
@@ -15,7 +15,7 @@
                 <p>Release Date: <%= movie.release_date %></p>
 
                 <!-- View Details Button -->
-                <form action="/usr/352/movies/details" method="get" style="display: inline;">
+                <form action="/movies/details" method="get" style="display: inline;">
                     <input type="hidden" name="movieId" value="<%= movie.id %>">
                     <button type="submit" class="view-details-btn">View Details</button>
                 </form>

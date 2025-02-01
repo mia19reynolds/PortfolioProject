@@ -50,7 +50,7 @@ router.post('/registered', [
             
                     req.session.watchlist = [];
                     
-                    res.redirect('/usr/352/'); 
+                    res.redirect('/'); 
                 }
             });
         });
@@ -121,7 +121,7 @@ router.post('/loggedin', function (req, res, next) {
                 // Save the watchlist in the session
                 req.session.watchlist = watchlist || [];
                 console.log(req.session)
-                res.redirect('/usr/352'); 
+                res.redirect('/'); 
             });
         });
     });
