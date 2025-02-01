@@ -7,7 +7,7 @@
             <div class="movie">
                 <img src="<%= movie.poster %>" alt="<%= movie.title %>">
                 <h3><%= movie.title %></h3>
-                <p>Rating: <%= movie.vote_average %></p>
+                <p>Rating: <%= movie.vote_average %>/10</p>
                 <a href="/movies/details?movieId=<%= movie.id %>" class="view-details">View More Details</a>
             </div>
         <% }) %>
