@@ -5,6 +5,7 @@ const isAuthenticated = (req, res, next) => {
     } else {
         res.locals.user = null;
         req.flash('error', 'You must be logged in to view this page.');
+        console.log("Flash message set:", req.flash('error')); // Debugging
         res.redirect('/usr/352/users/login');  // Redirect to login if not authenticated
     }
 };
