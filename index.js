@@ -85,7 +85,7 @@ const mainRoutes = require("./routes/main")
 app.use('/', mainRoutes)
 
 const userRoutes = require('./routes/users')
-app.use(`${basePath}/users`, userRoutes)
+app.use(`/users`, userRoutes)
 
 // Load the route handlers for /books
 const moviesRoutes = require('./routes/api/movies');
