@@ -54,11 +54,6 @@ const db = mysql.createConnection ({
 // Flash
 app.use(flash());
 
-app.use((req, res, next) => {
-    res.locals.messages = req.flash();
-    next();
-});
-
 // Connect to the database
 db.connect((err) => {
     if (err) {
