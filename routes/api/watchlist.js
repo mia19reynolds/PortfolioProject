@@ -7,7 +7,7 @@ router.get('/', isAuthenticated, (req, res) => {
     const userId = req.session.userId; 
     
     if (!userId) {
-        return res.redirect('/usr/352/users/login');
+        return res.redirect('/users/login');
     }
 
     let query = req.sanitize(req.query.query) || '';  
@@ -69,9 +69,9 @@ router.post('/add', isAuthenticated, (req, res) => {
         console.log(req.session)
 
         if (action === "details") {
-          return res.redirect(`/usr/352/movies/details?movieId=${movieId}`);
+          return res.redirect(`/movies/details?movieId=${movieId}`);
       }
-      res.redirect('/usr/352/movies/search');
+      res.redirect('/movies/search');
   });
 });
 

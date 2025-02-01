@@ -48,7 +48,7 @@ router.post('/add', isAuthenticated, (req, res) => {
             return res.status(500).json({ error: 'Failed to submit comment' });
         }
 
-        res.redirect(`/usr/352/movies/details?movieId=${imdb_id}`);
+        res.redirect(`/movies/details?movieId=${imdb_id}`);
     });
 });
 
