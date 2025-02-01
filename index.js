@@ -93,15 +93,15 @@ app.use(`/movies`, moviesRoutes);
 
 // Load the route handlers for /books
 const watchlistRoutes = require('./routes/api/watchlist');
-app.use(`${basePath}/watchlist`, watchlistRoutes);
+app.use(`/watchlist`, watchlistRoutes);
 
 // Load the route for api leaderboard
 const leaderboardRoutes = require('./routes/leaderboard'); 
-app.use(`${basePath}/leaderboard`, leaderboardRoutes);
+app.use(`/leaderboard`, leaderboardRoutes);
 
 // Import the comments route
 const commentsRoute = require('./routes/comments'); 
-app.use(`${basePath}/comments`, commentsRoute);
+app.use(`/comments`, commentsRoute);
 
 // Start the web app listening
 app.listen(port, () => console.log(`Node app listening on port ${port}!`))
