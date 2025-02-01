@@ -29,7 +29,7 @@ app.set('layout', '../views/layouts/main');
 app.use(express.urlencoded({ extended: true }))
 
 // Set up public folder (for css and statis js)
-app.use('/usr/352', express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 // Create a session
