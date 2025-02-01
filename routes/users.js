@@ -50,7 +50,7 @@ router.post('/registered', [
             
                     req.session.watchlist = [];
                     
-                    res.redirect('/'); 
+                    res.redirect('/usr/352'); 
                 }
             });
         });
