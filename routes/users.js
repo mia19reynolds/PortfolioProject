@@ -59,7 +59,8 @@ router.post('/registered', [
 
 // Login route
 router.get('/login', function (req, res, next) {
-    res.render('../views/auth/login', { error: null, formData: {} });                                                             
+    const flashMessage = req.flash('error'); 
+    res.render('../views/auth/login', { error: null, formData: {}, flashMessage });                                                             
 });
 
 router.post('/loggedin', function (req, res, next) {
