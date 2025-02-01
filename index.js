@@ -89,7 +89,7 @@ app.use(`/users`, userRoutes)
 
 // Load the route handlers for /books
 const moviesRoutes = require('./routes/api/movies');
-app.use(`${basePath}/movies`, moviesRoutes);
+app.use(`/movies`, moviesRoutes);
 
 // Load the route handlers for /books
 const watchlistRoutes = require('./routes/api/watchlist');
