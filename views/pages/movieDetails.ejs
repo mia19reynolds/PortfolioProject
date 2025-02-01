@@ -32,7 +32,7 @@
                 <button type="submit">Remove from Watchlist</button>
             </form>
         <% } else { %>
-            <form action="/usr/352/watchlist/add" method="post">
+            <form action="<%= baseUrl %>/watchlist/add" method="post">
                 <input type="hidden" name="movieId" value="<%= movie.id %>">
                 <input type="hidden" name="title" value="<%= movie.title %>">
                 <input type="hidden" name="poster" value="<%= movie.poster %>">

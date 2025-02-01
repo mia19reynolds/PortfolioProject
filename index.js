@@ -8,7 +8,8 @@ const expressLayouts = require('express-ejs-layouts');
 const path = require('path');
 const flash = require('connect-flash');
 
-const basePath = '/usr/352';
+const BASE_URL = '/usr/352';  
+app.locals.baseUrl = BASE_URL;
 
 //Import mysql module
 var mysql = require('mysql2')

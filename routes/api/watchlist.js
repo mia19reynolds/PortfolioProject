@@ -39,7 +39,7 @@ router.get('/', isAuthenticated, (req, res) => {
 });
 
 // Add to Watchlist
-router.post('/add', isAuthenticated, (req, res) => {
+router.post('/usr/352/add', isAuthenticated, (req, res) => {
     const userId = req.session.userId;
 
     if (!userId) {
