@@ -46,7 +46,7 @@ app.use(session({
 const db = mysql.createConnection ({
     host: 'igor.gold.ac.uk',
     user: 'mreyn001',
-    password: '3Geldart',
+    password: '*******',
     database: 'mreyn001_flixlist',
     port: 3307
 })

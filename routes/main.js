@@ -5,7 +5,7 @@ const bcrypt = require('bcrypt');
 const isAuthenticated = require('./auth');
 const request = require('request');
 
-let apiKey = 'a646101ee6c12f017d2d957d18bc2323';
+let apiKey = '**************';
 
 // Route to get trending and upcoming movies
 router.get('/', isAuthenticated, (req, res, next) => {

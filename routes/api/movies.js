@@ -5,7 +5,7 @@ const isAuthenticated = require('../auth');
 const { check, validationResult } = require('express-validator');
 const expressSanitizer = require('express-sanitizer');
 
-let apiKey = 'a646101ee6c12f017d2d957d18bc2323';
+let apiKey = '*************';
 
 // Search Route with validation and sanitization
 router.get('/search', [
