@@ -8,9 +8,6 @@ const expressLayouts = require('express-ejs-layouts');
 const path = require('path');
 const flash = require('connect-flash');
 
-const BASE_URL = '/usr/352';  
-app.locals.baseUrl = BASE_URL;
-
 //Import mysql module
 var mysql = require('mysql2')
 
@@ -32,7 +29,7 @@ app.set('layout', '../views/layouts/main');
 app.use(express.urlencoded({ extended: true }))
 
 // Set up public folder (for css and statis js)
-app.use(express.static(path.join(__dirname, 'public')));
+app.use('/usr/352', express.static(path.join(__dirname, 'public')));
 
 
 // Create a session
