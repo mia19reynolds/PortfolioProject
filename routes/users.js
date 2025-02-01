@@ -72,6 +72,7 @@ router.post('/loggedin', function (req, res, next) {
         return res.render('../views/auth/login', {
             error: 'Email and password are required.',
             formData: req.body,
+            flashMessage: null,
         });
     }
 
@@ -86,6 +87,7 @@ router.post('/loggedin', function (req, res, next) {
             return res.render('../views/auth/login', {
                 error: 'User does not exist.',
                 formData: req.body,
+                flashMessage: null,
             });
         }
         const hashedPassword = result[0].password;
@@ -99,6 +101,7 @@ router.post('/loggedin', function (req, res, next) {
                 return res.render('../views/auth/login', {
                     error: 'Incorrect password.',
                     formData: req.body,
+                    flashMessage: null,
                 });
             }
 
