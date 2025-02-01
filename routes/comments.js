@@ -32,7 +32,7 @@ router.post('/add', isAuthenticated, (req, res) => {
     const comment = req.sanitize(req.body.comment);
 
     if (!userId) {
-        return res.redirect('/usr/352/users/login');
+        return res.redirect('/users/login');
     }
 
     if (!imdb_id || !comment) {
